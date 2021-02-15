@@ -1,5 +1,6 @@
 # tetrisTiler
-Tile the plane with tetris pieces
+Tile the plane with tetris pieces.
+Doesn't follow the official repartition of pieces types (yet ?). 
 
 ### build
 
@@ -23,3 +24,5 @@ Tile the plane with tetris pieces
 <code>
 ./tetris [maximum level of substitution] [window size (px)] [size of the margin between pieces (px)]
   </code>
+
+

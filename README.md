@@ -3,13 +3,13 @@ Tile the plane with tetris pieces
 
 ## build
 
-`sudo apt install libsdl2-dev libsdl2-2.0-0 -y;
-git clone https://github.com/CesarChaussinand/tetrisTiler
-cd tetrisTiler
-mkdir build
-cd build
-cmake ../
-make`
+`sudo apt install libsdl2-dev libsdl2-2.0-0 -y;`
+`git clone https://github.com/CesarChaussinand/tetrisTiler`
+`cd tetrisTiler`
+`mkdir build`
+`cd build`
+`cmake ../`
+`make`
 
 # use
 

@@ -27,3 +27,6 @@ Doesn't follow the official repartition of pieces types (yet ?).
   </code>
 
 
+### screenshot
+
+![example](https://raw.githubusercontent.com/CesarChaussinand/tetrisTiler/main/tetrisTiling_4_600_2.jpg)

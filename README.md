@@ -1,7 +1,7 @@
 # tetrisTiler
 Tile the plane with tetris pieces
 
-## build
+### build
 
 `sudo apt install libsdl2-dev libsdl2-2.0-0 -y;`
 
@@ -18,7 +18,7 @@ Tile the plane with tetris pieces
 `make`
 
 
-# use
+### use
 
 <code>
 ./tetris [maximum level of substitution] [window size (px)] [size of the margin between pieces (px)]

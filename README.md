@@ -6,24 +6,29 @@ Tile the plane with tetris pieces
 <code>
 sudo apt install libsdl2-dev libsdl2-2.0-0 -y;
   </code>
+  
 <code>  
 git clone https://github.com/CesarChaussinand/tetrisTiler
   </code>
+  
 <code>
 cd tetrisTiler
   </code>
+  
 <code>
 mkdir build
   </code>
+  
 <code>
 cd build
   </code>
+  
 <code>
 cmake ../
   </code>
+  
 <code>
 make
-
   </code>
 
 # use

@@ -23,7 +23,7 @@ Doesn't follow the official repartition of pieces types (yet ?).
 ### use
 
 <code>
-./tetris [maximum level of substitution] [window size (px)] [size of the margin between pieces (px)]
+./tetrisTile [maximum level of substitution] [window size (px)] [size of the margin between pieces (px)]
   </code>
 
 

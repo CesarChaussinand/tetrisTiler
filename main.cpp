@@ -66,7 +66,7 @@ public:
 =========================================================*/
 
 		if (level==0){
-			if(shape=='o'){	//done
+			if(shape=='o'){
 				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
 				SDL_RenderDrawLine(renderer,posX*unit+mar,posY*unit+mar,(posX+2)*unit,posY*unit+mar);
 				SDL_RenderDrawLine(renderer,(posX+2)*unit,posY*unit+mar,(posX+2)*unit,(posY+2)*unit);
@@ -76,7 +76,7 @@ public:
 				oNb = oNb + 1;				
 			}
 			
-			else if(shape=='i'){ //done
+			else if(shape=='i'){
 				SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
 				if (rotation==0){
 					SDL_RenderDrawLine(renderer,posX*unit+mar,posY*unit+mar,(posX+1)*unit,posY*unit+mar);
@@ -93,7 +93,7 @@ public:
 				iNb = iNb + 1;
 			}
 			
-			else if(shape=='l'){ //done
+			else if(shape=='l'){
 				SDL_SetRenderDrawColor(renderer, 0, 255, 0, 0);
 				if (rotation==0){
 					SDL_RenderDrawLine(renderer,posX*unit+mar,posY*unit+mar,(posX+1)*unit,posY*unit+mar);
@@ -158,7 +158,7 @@ public:
 				if(rotation<0){jNb = jNb + 1;}else{lNb = lNb + 1;}
 			}
 			
-			else if(shape=='t'){ //done
+			else if(shape=='t'){
 				SDL_SetRenderDrawColor(renderer, 255, 0, 255, 0);
 				if (rotation==0){
 					SDL_RenderDrawLine(renderer,posX*unit+mar,posY*unit+mar,(posX+3)*unit,posY*unit+mar);
@@ -252,9 +252,8 @@ public:
 ==============================================================================================================*/		
 
 		else{
-			if(shape=='o'){ //done
+			if(shape=='o'){
 				//ici, tirer au sort les différentes décompositions possibles
-				
 				srand (time(NULL)+randmix);
 				randmix = randmix + 1;
 				
@@ -293,7 +292,7 @@ public:
 					fill_shape('o',0,2+posX*2,2+posY*2,level-1,unit/2);
 				}
 			}
-			else if(shape=='l'){ //done
+			else if(shape=='l'){
 				if(rotation==0){
 					fill_shape('o',0,0+posX*2,0+posY*2,level-1,unit/2);
 					fill_shape('l',0,1+posX*2,2+posY*2,level-1,unit/2);
@@ -343,7 +342,7 @@ public:
 					fill_shape('l',-3,0+posX*2,0+posY*2,level-1,unit/2);
 				}
 			}
-			else if(shape=='i'){//done
+			else if(shape=='i'){
 				if(rotation==0){
 /*					srand (time(NULL)+randmix);
 					randmix = randmix + 1;
@@ -367,7 +366,7 @@ public:
 					fill_shape('l',1,2+posX*2,0+posY*2,level-1,unit/2);
 					fill_shape('l',-2,5+posX*2,0+posY*2,level-1,unit/2);
 				}
-			}else if(shape=='t'){//done
+			}else if(shape=='t'){
 				if(rotation==0){
 					fill_shape('o',0,2+posX*2,2+posY*2,level-1,unit/2);
 					fill_shape('i',1,1+posX*2,1+posY*2,level-1,unit/2);
@@ -413,54 +412,8 @@ public:
 				}
 			}
 		}
-
-	}
-    
-    void draw_circle(int center_x, int center_y, int radius_){
-        // Setting the color to be RED with 100% opaque (0% trasparent).
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-
-        // Drawing circle
-        for(int x=center_x-radius_; x<=center_x+radius_; x++){
-            for(int y=center_y-radius_; y<=center_y+radius_; y++){
-                if((std::pow(center_y-y,2)+std::pow(center_x-x,2)) <= 
-                    std::pow(radius_,2)){
-                    SDL_RenderDrawPoint(renderer, x, y);
-                }
-            }
-        }
-
-        // Show the change on the screen
-        SDL_RenderPresent(renderer);
-    }
-    
-     void move_circle(){
-        // Setting the color to be RED with 100% opaque (0% trasparent).
-        
-        SDL_Event event;    // Event variable
-        while(!(event.type == SDL_QUIT)){
-
-            // Circle will go down!
-            for(int i=0; i<height; i++){
-                SDL_Delay(10);  // setting some Delay
-                SDL_PollEvent(&event);  // Catching the poll event.
-                if(event.type == SDL_QUIT) return;
-                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-                SDL_RenderClear(renderer);
-                draw_circle(width/2, i, 25);
-            }
-
-            // Circle will go up!
-            for(int i=height; i>0; i--){
-                SDL_Delay(10);  // setting some Delay
-                SDL_PollEvent(&event);  // Catching the poll event.
-                if(event.type == SDL_QUIT) return;
-                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-                SDL_RenderClear(renderer);
-                draw_circle(width/2, i, 25);
-            }
-        }
-	}
+    	}
+}
     
 private:
     int height;     // Height of the window
@@ -501,18 +454,12 @@ int main(int argc, char * argv[]){
 			std::cerr << "Trailing characters after number: " << argv[3] << '\n';
 		}
 	}
-    // Creating the object by passing Height and Width value.
+
     Framework fw(windowSize, windowSize);
-
-	//fw.draw_circle(200,100,50);
-
-    //fw.move_circle();
-    
-    
 	
  	fw.fill_shape('o',0,0,0,lev,(windowSize/2)-1);
  	
-    SDL_Event event;    // Event variable
+    SDL_Event event;
     
     std::cout << "Nombre de i : " << iNb << "\n";
     std::cout << "Nombre de o : " << oNb << "\n";
@@ -522,12 +469,9 @@ int main(int argc, char * argv[]){
     std::cout << "Nombre de s : " << sNb << "\n";
     std::cout << "Nombre de z : " << zNb << "\n";
 
-    
-    // Below while loop checks if the window has terminated using close in the
-    //  corner.
     while(!(event.type == SDL_QUIT)){
-        SDL_Delay(10);  // setting some Delay
-        SDL_PollEvent(&event);  // Catching the poll event.
+        SDL_Delay(10);
+        SDL_PollEvent(&event);
     }  
   
     return 1;
